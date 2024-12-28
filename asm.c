@@ -176,20 +176,30 @@ int resolveImmediate(const char *value) {
 }
 
 // Main function
-int main(int argc, char *argv[]) {
-    if (argc != 4) {
-        printf("Usage: %s program.asm imemin.txt dmemin.txt\n", argv[0]);
-        return 1;
-    }
+int main(/*int argc, char *argv[] */) {
+    // if (argc != 4) {
+    //     printf("Usage: %s program.asm imemin.txt dmemin.txt\n", argv[0]);
+    //     return 1;
+    // }
 
-    FILE *inputFile = fopen(argv[1], "r");
-    FILE *imeminFile = fopen(argv[2], "w");
-    FILE *dmeminFile = fopen(argv[3], "w");
+    // FILE *inputFile = fopen(argv[1], "r");
+    // FILE *imeminFile = fopen(argv[2], "w");
+    // FILE *dmeminFile = fopen(argv[3], "w");
 
-    if (!inputFile || !imeminFile || !dmeminFile) {
+    // if (!inputFile || !imeminFile || !dmeminFile) {
+    //     printf("Error opening files.\n");
+    //     return 1;
+    // }
+
+    FILE *inputFile = fopen("fib.asm", "r");
+    FILE *imeminFile = fopen("imemin.txt", "w");
+    FILE *dmeminFile = fopen("dmemin.txt", "w");
+
+    if (inputFile == NULL || imeminFile == NULL || dmeminFile == NULL) {
         printf("Error opening files.\n");
         return 1;
     }
+
 
     // First and second passes
     firstPass(inputFile);
