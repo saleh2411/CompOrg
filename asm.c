@@ -200,7 +200,6 @@ int main(/*int argc, char *argv[] */) {
         return 1;
     }
 
-
     // First and second passes
     firstPass(inputFile);
     rewind(inputFile); // Reset file pointer for second pass

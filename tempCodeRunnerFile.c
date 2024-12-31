@@ -1,4 +1,3 @@
-if (argc != 4) {
-        printf("Usage: %s program.asm imemin.txt dmemin.txt\n", argv[0]);
-        return 1;
-    }
+firstPass(inputFile);
+    rewind(inputFile); // Reset file pointer for second pass
+    secondPass(imeminFile, dmeminFile);
